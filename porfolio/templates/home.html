@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Home</h1>
+
+{% for project_item in projects %}
+
+<h2>{{ project_item.title }}</h2>
+<p>{{ project_item.description }}</p>
+<img src="{{ project_item.image.url }}" alt="{{ project_item.title }}">
+
+
+    {% if project_item.url %}
+    <a href="project_item.url">{{project_item.url}}</a>
+    {% endif %} 
+
+{% endfor %}
+{% endblock content %}

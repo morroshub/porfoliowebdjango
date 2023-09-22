@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Post</h1>
+
+{% for post_new in posts %}
+
+    <h2>{{post_new.title}}</h2>
+    <p>{{post_new.description|striptags|truncatechars:100 }}</p>
+    <p>{{post_new.date| date:'M d Y'|upper}}</p> <!--formato mes,dia,anio -->
+    <img src="{{post_new.image.url}}" alt="{{post_new.title}}">
+
+
+    <a href="{% url 'blog-posts:post_detail' post_id=post_new.id %}">{{ post_new.title }}</a>
+
+{% endfor %}
+{% endblock content %}
