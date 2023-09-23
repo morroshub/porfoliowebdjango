@@ -17,7 +17,10 @@
 
     </div>
 
-    <a href="{% url 'blog-posts:post_detail' post_id=post_new.id %}" class="btn btn-primary">{{ post_new.title }}</a>
+    <div class="p-3">
+        <a href="{% url 'blog-posts:post_detail' post_id=post_new.id %}" class="btn btn-primary mr-4 ml-4">Ver Detalles</a>
+    </div>
+    
 
 </div></div>
 

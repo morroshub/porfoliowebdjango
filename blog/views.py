@@ -7,4 +7,4 @@ def render_posts(request):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    return render(request, 'post_detail.html', {'posts': post_id}) 
+    return render(request, 'post_detail.html', {'post': post})

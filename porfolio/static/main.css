@@ -1,13 +1,49 @@
-body {
-    background: #090909;
-    margin: 0 25%; /* Establecer un margen del 20% en los bordes izquierdo y derecho */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.bg-black {
-    background: #090909;
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #007BFF;
 }
 
-.card-project:hover { 
-    border:1px solid #090909;
+a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de fondo y colores */
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.bg-dark {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
