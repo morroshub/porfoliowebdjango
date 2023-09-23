@@ -1,18 +1,58 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h1>Home</h1>
 
-{% for project_item in projects %}
+{% load static %}
 
-<h2>{{ project_item.title }}</h2>
-<p>{{ project_item.description }}</p>
-<img src="{{ project_item.image.url }}" alt="{{ project_item.title }}">
+<header class="row bg-black"> 
+    <div class="col-md-3">
+        <img src="{% static 'porfolio/CV-LUCASMORRONE-PYTHON-DEV.jpg' %}" alt="" class="img-fluid">
+    </div>
+    
+
+    </div>
+
+    <div class="col-md-8" my-auto>
+        <h1>Morros its awesome</h1>
+        <h3>El peronismo te hace progresar a la fuerza</h3>
+        <p>aca va a ir un chamullo copado que subo desp</p>
+        <a href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3"> DownloadCV</a>
+
+    </div>
+
+</header>
 
 
-    {% if project_item.url %}
-    <a href="project_item.url">{{project_item.url}}</a>
-    {% endif %} 
+<div class="row my-5 text-center">
+    <div class="col-md-12">
+        <h2>Mis proyectos</h2>
+        <p class="p-1">En esta sección de proyectos encontrarán Jupyter Notebooks y aplicaciones web.</p>
+    </div>
+</div>
 
-{% endfor %}
-{% endblock content %}
+    {% for project_item in projects %}
+
+    <div class="col-md-3 p-3">
+        <div class="card bg-black card-project">
+            <img src="{{ project_item.image.url }}" alt="{{ project_item.title }}" class="card-img-top img-fluid" >
+            <div class="card-body">
+                
+                <h2>{{ project_item.title }}</h2>
+                <p>{{ project_item.description }}</p>
+
+                
+
+                {% if project_item.url %}
+                <a href="{{project_item.url}}" class="btn btn-black rounded-0 bt-sm" target="_blank">{{project_item.url}}</a>
+        
+                {% endif %} 
+            
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+    {% endblock %}
+    
+
+</div>

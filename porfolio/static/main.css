@@ -1,0 +1,13 @@
+body {
+    background: #090909;
+    margin: 0 25%; /* Establecer un margen del 20% en los bordes izquierdo y derecho */
+}
+
+.bg-black {
+    background: #090909;
+}
+
+.card-project:hover { 
+    border:1px solid #090909;
+    cursor: pointer;
+}
