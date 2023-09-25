@@ -1,49 +1,20 @@
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Enlaces */
-a {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Botones */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+body {
+    background: #000000;
+  }
+  
+  .bg-black {
+    background: #000000;
+  }
+  
+  .card-project:hover {
+    border: 1px solid #eee;
     cursor: pointer;
-}
+  }
 
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos de fondo y colores */
-.bg-light {
-    background-color: #f8f9fa;
-}
-
-.bg-dark {
-    background-color: #343a40;
-    color: #fff;
-}
-
-/* Pie de página */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
+  .navbar-brand {
+    background-color: rgb(0, 0, 0); /* Cambia el color de fondo */
+    color: white; /* Cambia el color del texto */
+    padding: 10px 20px; /* Añade relleno para espaciado */
+    border-radius: 5px; /* Agrega bordes redondeados para resaltar */
+  }
+  

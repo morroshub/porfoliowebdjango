@@ -4,39 +4,43 @@
 
 {% load static %}
 
-<header class="row bg-black img-fluid"> 
-    <div class="col-md-4">
-        <img src="{% static 'porfolio/CV-LUCASMORRONE-PYTHON-DEV.jpg' %}" alt="" class="image">
-    </div>
-
-    <div class="col-md-4">
-        <h1>Morros its awesome</h1>
-        <h3>El peronismo te hace progresar a la fuerza</h3>
-        <p>aca va a ir un chamullo copado que subo desp</p>
-        <a href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3"> DownloadCV</a>
-
-    </div>
-
+<!-- Hero Section -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<header class="row bg-black">
+  <div class="col-md-12">
+  <img src="{% static 'porfolio/CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" /></div>
+  <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}">Download my CV</a>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </div>
 </header>
 
-
+<!-- Porfolio Section -->
 <div class="row my-4 text-center">
-    <h2>Mis projectos</h2>
-    <p>Parrafo de projectos</p>
 
-    {% for project_item in projects %}
-    <div class="col-md-4 p-4">
-        <div class="card bg-black card-project">
-            <img src="{{ project_item.image.url }}" alt="{{ project_item.title }}" class="card-img-top img-fluid">
-            <div class="card-body">
-                <h2>{{ project_item.title }}</h2>
-                <p>{{ project_item.description }}</p>
-                {% if project_item.url %}
-                <a href="{{project_item.url}}" class="btn btn-white rounded-0 bt-sm" target="_blank">{{project_item.url}}</a>
-                {% endif %}
-            </div>
+    <h1>I am <strong>Morros</strong></h1>
+    <h3>I'm a Python FullStack Developer, Data Enthusiast & Cybersecurity Enthusiast</h3>
+    <p>"I have expertise in backend development, databases, and architectural patterns, but I aim to expand my career within the data science and business analytics ecosystem. I have always been passionate about data; making informed decisions based on data has always been my preferred approach. I work extensively with Python, delving into its libraries and frameworks, with a particular focus on its applications in the fields of big data and machine learning."</p>
+
+    {% for project in projects %}
+    <div class="col-md-4 mb-4"> <!-- Cambiamos el valor de 'p-4' por 'mb-4' para agregar margen inferior -->
+      <div class="card bg-black card-project">
+        <img src="{{project.image.url }}" class="card-img-top img-fluid" style="height: 220px; object-fit: cover;">
+        <!-- Establecemos un tamaño fijo para la imagen (height) y controlamos cómo se ajusta en el contenedor (object-fit) -->
+  
+        <div class="card-body">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.description }}</p>
+  
+          {% if project.url %}
+          <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="__blank" rel="noreferrer">Visit the
+            Project</a>
+          {% endif %}
         </div>
+      </div>
     </div>
     {% endfor %}
-</div>
-{% endblock %}
+  </div>
+{% endblock %}  
