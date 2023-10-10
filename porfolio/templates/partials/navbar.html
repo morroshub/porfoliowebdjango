@@ -1,25 +1,24 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand FW-bold fst-italic" href="#">Mi Github Profile</a>
+  <a class="navbar-brand FW-bold fst-italic" href="#">U ARE IN MORROS SPACE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ms-auto">
-      <li class="nav-item active">
-        <a class="btn btn-primary btn-sm" href="https://www.github.com/morroshub" target="_blank">Github Profile</a>
+    </li>
+    <li class="nav-item mr-2">
+      <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
+    </li>
+        <a class="nav-link" href="{% url 'blog-posts:posts' %}">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-primary btn-sm" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-primary btn-sm" href="{% url 'blog-posts:posts' %}">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-primary btn-sm" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" target="_blank">Certifications PDF</a>
+        <li class="nav-item active mr-2">
+          <a class="nav-link" href="https://www.github.com/morroshub" target="_blank">Github Profile</a>
+        <li class="nav-item mr-2">
+        <a class="nav-link" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" target="_blank">Certifications PDF</a>
       </li>
     </ul>
   </div>
 </nav>
-

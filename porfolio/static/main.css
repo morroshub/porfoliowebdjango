@@ -1,7 +1,7 @@
 body {
-    background: #000000;
-  }
-  
+  background: #ccc; /* Cambia el color de fondo a gris */
+}
+
   .bg-black {
     background: #000000;
   }
@@ -18,3 +18,47 @@ body {
     border-radius: 5px; /* Agrega bordes redondeados para resaltar */
   }
   
+
+
+  /* Agrega un espacio alrededor del cuerpo de la página */
+body {
+  background: #212121;
+  margin: 20px; /* Ajusta el margen exterior */
+}
+
+/* Espaciado y borde para la cabecera */
+.bg-black {
+  background: #212121;
+  padding: 30px; /* Agrega relleno para espaciado */
+  margin-bottom: 30px; /* Agrega margen en la parte inferior */
+}
+
+/* Estilo para las tarjetas de proyectos al pasar el mouse */
+.card-project:hover {
+  border: 5px solid #eee;
+  cursor: pointer;
+}
+
+/* Estilo para el enlace de la marca de navegación */
+.navbar-brand {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 20px; /* Agrega margen en el lado derecho para separar otros elementos */
+}
+
+
+
+/* Establece una altura fija para el contenedor de la imagen */
+.image-container {
+  height: 360px;
+  overflow: hidden; /* Evita que la imagen desborde el contenedor */
+}
+
+/* Controla cómo se ajusta la imagen dentro del contenedor */
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

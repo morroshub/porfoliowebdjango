@@ -12,7 +12,7 @@
 <header class="row bg-black">
   <div class="col-md-12">
   <img src="{% static 'porfolio/CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" /></div>
-  <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}">Download my CV</a>
+  <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" target="_blank">Download my CV</a>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </div>
 </header>
@@ -22,10 +22,10 @@
 
     <h1>I am <strong>Morros</strong></h1>
     <h3>I'm a Python FullStack Developer, Data Enthusiast & Cybersecurity Enthusiast</h3>
-    <p>"I have expertise in backend development, databases, and architectural patterns, but I aim to expand my career within the data science and business analytics ecosystem. I have always been passionate about data; making informed decisions based on data has always been my preferred approach. I work extensively with Python, delving into its libraries and frameworks, with a particular focus on its applications in the fields of big data and machine learning."</p>
+    <p>I have expertise in backend development, databases, and architectural patterns, but I aim to expand my career within the data science and business analytics ecosystem. I have always been passionate about data; making informed decisions based on data has always been my preferred approach. I work extensively with Python, delving into its libraries and frameworks, with a particular focus on its applications in the fields of big data and machine learning.</p>
 
     {% for project in projects %}
-    <div class="col-md-4 mb-4"> <!-- Cambiamos el valor de 'p-4' por 'mb-4' para agregar margen inferior -->
+    <div class="col-md-4 mb-4"> 
       <div class="card bg-black card-project">
         <img src="{{project.image.url }}" class="card-img-top img-fluid" style="height: 220px; object-fit: cover;">
         <!-- Establecemos un tamaño fijo para la imagen (height) y controlamos cómo se ajusta en el contenedor (object-fit) -->
