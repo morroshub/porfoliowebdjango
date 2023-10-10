@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]  
+ALLOWED_HOSTS = ["127.0.0.1"]  
+CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev'] #Solicitudes POST, consideradas inseguras.
+
 
 # Application definition
 
