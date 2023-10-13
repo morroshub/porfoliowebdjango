@@ -1,1 +1,12 @@
 fly.toml
+
+media
+
+**//__pychache__**
+db.sqlite3 
+condaenv.yml
+.dockerignore
+fly.toml
+.git/
+.env 
+tmp

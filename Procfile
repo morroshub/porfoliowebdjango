@@ -1,2 +1,1 @@
-# TODO: Modify this Procfile to fit your needs
-web: gunicorn app:app
+web: gunicorn firstdjango.wsgi:application -b 0.0.0.0:8080

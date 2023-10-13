@@ -14,21 +14,29 @@ import os
 
 from pathlib import Path
 
+import environ
+env = environ.Env()
+environ.Env.read_env()  # Carga las variables de entorno desde el archivo .env
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!'
+SECRET_KEY = os.environ.get('SECRET_KEY_p')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#envrion 
+env = os.environ.get('DEBUG')=='False'
 
-ALLOWED_HOSTS = ["127.0.0.1"]  
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev'] #Solicitudes POST, consideradas inseguras.
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'sitepersonal.fly.dev/']
+CSRF_TRUSTED_ORIGINS = ['https://sitepersonal.fly.dev'] #Solicitudes POST, consideradas inseguras.
 
 
 # Application definition
@@ -39,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'blog',
     'porfolio',
@@ -80,11 +89,30 @@ WSGI_APPLICATION = 'firstdjango.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    # #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '08Xnp0k1DyidaF7',
+        'HOST': 'sitepersonal-db.internal',
+        'PORT': '5433',
     }
 }
+
+   
+
+# enviroment // produccion 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Take environment variables from .env file
+environ.Env.read_env(BASE_DIR / '.env')  
+
+
 
 
 # Password validation

@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for web-personal on 2023-10-10T19:09:51-03:00
+# fly.toml app configuration file generated for sitepersonal on 2023-10-12T21:38:54-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "web-personal"
+app = "sitepersonal"
 primary_region = "eze"
 
 [build]
