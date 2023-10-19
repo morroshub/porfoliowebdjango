@@ -10,33 +10,42 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+#Imports 
 import os
-
 from pathlib import Path
-
 import environ
-env = environ.Env()
-environ.Env.read_env()  # Carga las variables de entorno desde el archivo .env
+
+
+# Define DEBUG as a boolean, default to False
+env = environ.Env(
+    DEBUG=(bool, False),
+    SECRET_KEY=str,
+)
+
+
+
+# Variable de entorno
+env = environ.Env(DEBUG=(bool, False))  # Define DEBUG as a boolean, default to False
+environ.Env.read_env()  # Read environment variables from .env file if available
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!'
-SECRET_KEY = os.environ.get('SECRET_KEY_p')
+SECRET_KEY_p = os.environ.get('SECRET_KEY_p', '3ohiu^m1su%906rf#mws)xt=1u#!xdj-l_ahdh0r#$(k_=e7lb')
 
+# Use DEBUG from the environment if set; default to False otherwise
+DEBUG = env('DEBUG')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-
-#envrion 
-env = os.environ.get('DEBUG')=='False'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'sitepersonal.fly.dev/']
 CSRF_TRUSTED_ORIGINS = ['https://sitepersonal.fly.dev'] #Solicitudes POST, consideradas inseguras.
+
+
 
 
 # Application definition
@@ -85,27 +94,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'firstdjango.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    # #     'NAME': BASE_DIR / 'db.sqlite3',
-    # },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '08Xnp0k1DyidaF7',
-        'HOST': 'sitepersonal-db.internal',
-        'PORT': '5433',
+# Database configuration
+if DEBUG:  # Development settings
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:  # Production settings (Fly.io)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': '08Xnp0k1DyidaF7',
+            'HOST': 'sitepersonal-db.internal',
+            'PORT': '5433',
+        }
+    }
 
    
 
-# enviroment // produccion 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
