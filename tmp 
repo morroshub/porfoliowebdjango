@@ -1,7 +1,7 @@
 Postgres cluster sitepersonal-db created
   Username:    postgres
   Password:    08Xnp0k1DyidaF7
-  Hostname:    sitepersonal-db.internal
+  Hostname:    sitepersonal.fly.dev
   Flycast:     fdaa:3:4217:0:1::2
   Proxy port:  5432
   Postgres port:  5433

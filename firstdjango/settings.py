@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 import environ
+import dj_database_url
+
 
 
 # Define DEBUG as a boolean, default to False
@@ -43,8 +45,10 @@ DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'sitepersonal.fly.dev/']
-CSRF_TRUSTED_ORIGINS = ['https://sitepersonal.fly.dev'] #Solicitudes POST, consideradas inseguras.
+CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"] #Solicitudes POST, consideradas inseguras.
 
+if 'FLY_APP' in os.environ:
+    ALLOWED_HOSTS.append('0.0.0.0')
 
 
 
@@ -106,15 +110,18 @@ else:  # Production settings (Fly.io)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
+            'NAME': 'sitepersonal',
             'USER': 'postgres',
             'PASSWORD': '08Xnp0k1DyidaF7',
             'HOST': 'sitepersonal-db.internal',
-            'PORT': '5433',
+            'PORT': '5432',
         }
     }
 
-   
+# Usar DATABASE_URL desde las variables de entorno
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
