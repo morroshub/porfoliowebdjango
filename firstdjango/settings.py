@@ -51,7 +51,6 @@ if 'FLY_APP' in os.environ:
     ALLOWED_HOSTS.append('0.0.0.0')
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -108,19 +107,10 @@ if DEBUG:  # Development settings
     }
 else:  # Production settings (Fly.io)
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'sitepersonal',
-            'USER': 'postgres',
-            'PASSWORD': '08Xnp0k1DyidaF7',
-            'HOST': 'sitepersonal-db.internal',
-            'PORT': '5432',
-        }
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL')
+        )
     }
-
-# Usar DATABASE_URL desde las variables de entorno
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

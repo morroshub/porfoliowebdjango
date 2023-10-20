@@ -5,12 +5,21 @@
 
 app = "sitepersonal"
 primary_region = "eze"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
 
 [build]
-  builder = "paketobuildpacks/builder:base"
+  dockerfile = "dockerfile"
+  ignorefile = "/.dockerignore"
 
 [env]
   PORT = "8000"
+
+
+[experimental]
+allowed_public_ports = []
+auto_rollback = true
 
 [http_service]
   internal_port = 8000
@@ -18,8 +27,30 @@ primary_region = "eze"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
+  processes = ["web"]
 
 [[services]]
-  internal_port = 5432 #Postgres instance
+  http_checks = []
+  internal_port = 8000
+  processes = ["web"]
   protocol = "tcp"
+  script_checks = []
+
+[processes]
+  web = 'gunicorn firstdjango.wsgi:application -b 0.0.0.0:8000'
+
+[services.concurrency]
+  hard_limit = 25
+  soft_limit = 20
+  type = "connections"
+
+[deploy]
+  release_command = "python manage.py migrate --noinput"
+
+
+#   you ever need to run multiple commands in the future, you can create a bash script in your project files and then execute it like so:
+
+# # fly.toml
+
+# [deploy]
+#   release_command = "sh /path/to/your/script"

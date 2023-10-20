@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db:
+    image: 'postgres'
+    environment:
+      POSTGRES_PASSWORD: 08Xnp0k1DyidaF7
+    ports:
+      - '5432'
+
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+    depends_on:
+      - db
