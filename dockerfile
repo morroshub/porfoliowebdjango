@@ -1,21 +1,30 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+ARG PYTHON_VERSION=3.9-slim-bullseye
 
-# Set the working directory in the container
-WORKDIR /app
+FROM python:${PYTHON_VERSION}
 
-# Copy the contents of the project folder to the container
-COPY . .
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt && rm -rf /root/.cache/
+# install psycopg2 dependencies.
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
 
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
+RUN mkdir -p /code
 
-# Define environment variable
-ENV NAME World
+WORKDIR /code
 
-# Run the Django application using the correct manage.py path
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "core.wsgi:application"]
+COPY requirements.txt /tmp/requirements.txt
+RUN set -ex && \
+    pip install --upgrade pip && \
+    pip install -r /tmp/requirements.txt && \
+    rm -rf /root/.cache/
+COPY . /code
+
+ENV SECRET_KEY "O1wsmhkWSHRDafSiAykfGc7DO3eclomZE4LiTnEo46L6lEhTHv"
+RUN python manage.py collectstatic --noinput
+
+EXPOSE 8000
+
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "firstdjango.wsgi"]

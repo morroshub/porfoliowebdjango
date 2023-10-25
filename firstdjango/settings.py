@@ -37,7 +37,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!'
+SECRET_KEY = 'O1wsmhkWSHRDafSiAykfGc7DO3eclomZE4LiTnEo46L6lEhTHv'
 SECRET_KEY_p = os.environ.get('SECRET_KEY_p', '3ohiu^m1su%906rf#mws)xt=1u#!xdj-l_ahdh0r#$(k_=e7lb')
 
 # Use DEBUG from the environment if set; default to False otherwise
@@ -61,8 +61,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'blog',
-    'porfolio',
+    #Mis apps
+    'blog.apps.blog', #puedes ser el nombre de la clase tambien (al final)
+    'porfolio.apps.porfolio', #puedes ser el nombre de la clase tambien (al final)
 ]
 
 MIDDLEWARE = [
@@ -97,20 +98,31 @@ TEMPLATES = [
 WSGI_APPLICATION = 'firstdjango.wsgi.application'
 
 
+DATABASE = {
+    'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'porfolio',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+
 # Database configuration
-if DEBUG:  # Development settings
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:  # Production settings (Fly.io)
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=os.environ.get('DATABASE_URL')
-        )
-    }
+# if DEBUG:  # Development settings
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:  # Production settings (Fly.io)
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default=os.environ.get('DATABASE_URL')
+#         )
+#     }
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -157,15 +169,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') #ROOT esta en la raiz del projecto
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #Esta configuración habilitará la compresión y el almacenamiento en caché para los archivos estáticos servidos por WhiteNoise.
 
 
 MEDIA_ROOT = BASE_DIR / 'media' #Creamos un directorio con las imagenes cargadas para cada projecto.
 
-MEDIA_URL = '/public/'
-
+MEDIA_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static') #ROOT esta en la raiz del projecto
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
