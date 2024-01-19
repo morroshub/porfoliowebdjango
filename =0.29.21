@@ -1,0 +1,16 @@
+Collecting blosc2
+  Downloading blosc2-2.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.1 kB)
+Collecting cython
+  Downloading Cython-3.0.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.2 kB)
+Requirement already satisfied: numpy>=1.20.3 in /home/morros/anaconda3/lib/python3.11/site-packages (from blosc2) (1.26.3)
+Collecting ndindex>=1.4 (from blosc2)
+  Downloading ndindex-1.7-py3-none-any.whl (85 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.7/85.7 kB 1.8 MB/s eta 0:00:00
+Requirement already satisfied: msgpack in /home/morros/anaconda3/lib/python3.11/site-packages (from blosc2) (1.0.3)
+Requirement already satisfied: py-cpuinfo in /home/morros/anaconda3/lib/python3.11/site-packages (from blosc2) (9.0.0)
+Downloading blosc2-2.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 5.1 MB/s eta 0:00:00
+Downloading Cython-3.0.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 4.3 MB/s eta 0:00:00
+Installing collected packages: ndindex, cython, blosc2
+Successfully installed blosc2-2.4.0 cython-3.0.8 ndindex-1.7
