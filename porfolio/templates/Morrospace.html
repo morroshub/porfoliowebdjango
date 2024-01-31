@@ -1,35 +1,79 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+  {% load static %}
 
-{% load static %}
+  <!-- Hero Section -->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logos social media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-2c0S0YF6o9N11kuBj4owqJRW8B3pkJLlJ/4Uchpmp4J+Um78lJigQboMm47L5eUsHkCxZMlzJLs+P2s3/Ncz0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Hero Section -->
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <style>
+      .discordsocial-icon{
+        color: #aaaa;
+        transition: 0.2s;
+        text-decoration: none;
+        margin: 10 50px;
 
-<header class="row bg">
-  <div class="col-md-12">
-    <img src="{% static 'CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" /> <div class="custom-btn-container">
-    <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'LucasMorrone-Dev-python-data.pdf' %}" target="_blank">Download my CV</a>
- </div>
-</header>
+      }
+      .discordsocial-icon :hover{
+        color: #333
+      }
+    </style>
+  </head>
 
-<!-- Porfolio Section -->
-<div class="row my-4 text-center">
 
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Contenido izquierdo, como la imagen principal -->
+            <img src="{% static 'CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" style="font-size: 2em; margin: 10px;" />
+        </div>
+        <div class="col-md-6">
+            <!-- Contenido derecho, que contiene los iconos y el botón -->
+            <div class="social-btn-container">
+                <!-- Íconos sociales -->
+                <div class="social-icons">
+                    <a href="https://www.infobae.com" target="_blank" class="social-icon"><ion-icon name="logo-discord" style="font-size: 5em;"></ion-icon></a>
+                    <a href="https://www.linkedin.com/lucas-genaro-morrone" target="_blank" class="social-icon"><ion-icon name="logo-linkedin" style="font-size: 5em;"></ion-icon></a>
+                    <a href="https://www.github.com/morroshub" target="_blank" class="social-icon"><ion-icon name="logo-github" style="font-size: 6em;"></ion-icon></a>
+                    <a href="https://www.caffesito.com" target="_blank" 
+                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 6em;"></ion-icon></a>
+
+                    <a href="https://www.playlist.com" target="_blank" 
+                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 6em;"></ion-icon></a>
+
+                    <a href="https://www.mandameunmail.com" target="_blank" 
+                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 6em;"></ion-icon></a>
+
+                    
+                    
+                    <a href="https://youtube.com/lucasmororne" target="_blank"
+                    class="social-icon"><ion-icon name="logo-youtube" style="font-size: 5em;
+                    "></ion-icon></a>
+                </div>
+                
+                <!-- Botón de descarga -->
+                <div class="custom-btn-container">
+                    <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'LucasMorrone-Dev-python-data.pdf' %}" target="_blank"> Download my CV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Porfolio Section -->
+  <div class="row my-4 text-center">
     <h1>I am <strong>Morros</strong></h1>
-    <h3>Developer, Data Engineer , SysAdm</h3>
-    <p>My interest in the field of Big Data and Business Analytics has
-      consistently driven me to seek learning opportunities and ways to
-      apply it in real-world use cases. My self-directed education is
-      grounded in active exploration of online resources, including
-      courses, conferences, specialized literature, and scholarly essays,
-      which complement my professional experience.</p>
+    <h3>Developer, Data Engineer, SysAdm</h3>
+    <p>My interest in the field of Big Data and Business Analytics has consistently driven me to seek learning opportunities and ways to apply it in real-world use cases. My self-directed education is grounded in active exploration of online resources, including courses, conferences, specialized literature, and scholarly essays, which complement my professional experience.</p>
+    <p>A picture says more than a thousand words... but what exactly do you want to visualize? I have seen a lot of examples of very good but also very bad visualizations. </p>
 
+    <h3>In a work environment, each role is challenging, but his role stands out as particularly demanding and crucial. <strong>More than an individual effort, it's a collaborative piece that requires heightened awareness at every level of the organization.</strong></h3>
 
-      
-{% endblock %}  
+  </div>
+
+{% endblock %}

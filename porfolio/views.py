@@ -14,3 +14,15 @@ def Projects(request):
 # Funcion que llama a Morrospacehtml
 def Morrospace(request):
     return render(request, 'Morrospace.html')
+
+
+def your_view(request):
+    context = {
+        'facebook_url': 'https://www.facebook.com/your-facebook-page',
+        'github_url': 'https://github.com/your-github-profile',
+        'youtube_url': 'https://www.youtube.com/your-channel',
+        'discord_url': 'https://discord.gg/your-discord-server',
+        # Add more social media URLs as needed
+    }
+
+    return render(request, 'layout.html', context)

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function startTextAnimation() {
         typeWriter("WELCOME TO MY SPACE DISCOVER && ENJOY MY PROFILE", 0, "welcome-title", function () {
             // Execute more code after the first title
-            typeWriter("MMORE INFO IN THE FOLLOWING LINKS", 1, "sub-text", null, 15);
+            typeWriter("MMORE INFO IN THE FOLLOWING LINKS ;", 1, "sub-text", null, 15);
         }, 45);
     }
 
