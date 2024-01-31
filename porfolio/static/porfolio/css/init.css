@@ -1,0 +1,35 @@
+/* main.css */
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    animation: blinkCursor 0.8s infinite;
+}
+
+.container {
+    max-width: 800px;
+    margin: 180 auto;
+    padding: 40px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+#terminal-text {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 48px;  /* Adjust the font size as needed */
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        border-right: 3px solid transparent;
+    }
+    50% {
+        border-right: 3px solid #00ff00;
+    }
+}

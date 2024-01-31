@@ -1,0 +1,14 @@
+
+#main
+body {
+    background-color: black;
+    color: #00ff00;  /* Green text color */
+    font-family: 'Courier New', monospace; /* Choose a monospaced font for a terminal-like feel */
+}
+
+#main
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}

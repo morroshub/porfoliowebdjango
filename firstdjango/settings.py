@@ -109,10 +109,7 @@ USE_TZ = True
 
 # Configuración para archivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-MEDIA_ROOT = BASE_DIR / 'media' #Creamos un directorio con las imagenes cargadas para cada projecto.
-
-MEDIA_URL = '/public/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'porfolio/static')]
 
 
 # Default primary key field type

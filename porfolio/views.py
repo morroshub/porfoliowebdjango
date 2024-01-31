@@ -7,9 +7,9 @@ def init_view(request):
     return render(request, 'init.html')
 
 # Funcion que llama a los projectos dentro de home
-def home(request):
+def Projects(request):
     projects = Project.objects.all()
-    return render(request, 'home.html', {'projects': projects})
+    return render(request, 'Projects.html', {'projects': projects})
 
 # Funcion que llama a Morrospacehtml
 def Morrospace(request):
