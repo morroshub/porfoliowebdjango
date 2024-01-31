@@ -2,20 +2,17 @@
 body {
     background-color: black;
     color: #00ff00;
-    font-family: 'Courier New', monospace;
-    text-align: center;
+    font-family: 'Roboto', monospace;
+    text-align: match-parent;
     animation: blinkCursor 0.8s infinite;
 }
 
 .container {
     max-width: 800px;
-    margin: 180 auto;
-    padding: 40px;
+    margin: 80 auto;
+    padding: 50px;
 }
 
-h3 {
-    margin-top: 20px;
-}
 
 #terminal-text {
     margin-bottom: 10px;
@@ -23,6 +20,10 @@ h3 {
 
 h1 {
     font-size: 48px;  /* Adjust the font size as needed */
+}
+
+h3 {
+    font-size: 20px;  /* Adjust the font size as needed */
 }
 
 @keyframes blinkCursor {

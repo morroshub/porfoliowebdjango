@@ -19,11 +19,23 @@
           <h1 id="welcome-title"></h1>
       </div>
 
-      <h3>En la siguiente lista de enlaces, podrás ir a la sección deseada.</h3>
-      <ul>
-          <li><a href="{% url 'Morrospace' %}">* Start Here</a><div class="loading-animation"></div></li>
-          <li><a href="{% url 'Projects' %}">* Projects</a><div class="loading-animation"></div></li>
-      </ul>
+      <!-- Sub texto pagina principal  -->
+      <div id="terminal-text">
+        <h3 id="sub-text"></h3>
+        </div>
+
+        <!-- Lista de links y sus animaciones respectivas  -->
+        <ul>
+            <li>
+                <a href="{% url 'Morrospace' %}">* Start Here</a>
+                <div class="loading-animation" id="loading-start-here"></div>
+            </li>
+            <li>
+                <a href="{% url 'Projects' %}">* Projects</a>
+                <div class="loading-animation" id="loading-projects"></div>
+            </li>
+        </ul>
+        
   </div>
 </body>
 
