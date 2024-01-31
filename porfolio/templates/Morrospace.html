@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- Hero Section -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<header class="row bg">
+  <div class="col-md-12">
+  <img src="{% static 'porfolio/CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" /></div>
+  <div class="custom-btn-container">
+    <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" target="_blank">Download my CV</a>
+ </div>
+</header>
+
+<!-- Porfolio Section -->
+<div class="row my-4 text-center">
+
+    <h1>I am <strong>Morros</strong></h1>
+    <h3>Developer, Data Engineer , SysAdm</h3>
+    <p>My interest in the field of Big Data and Business Analytics has
+      consistently driven me to seek learning opportunities and ways to
+      apply it in real-world use cases. My self-directed education is
+      grounded in active exploration of online resources, including
+      courses, conferences, specialized literature, and scholarly essays,
+      which complement my professional experience.</p>
+
+
+      
+{% endblock %}  

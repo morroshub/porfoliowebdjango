@@ -1,22 +1,40 @@
 {% load static %}
 
+
+
+<!-- "u are in morros space - start here " -->
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand FW-bold fst-italic" href="#">U ARE IN MORROS SPACE</a>
+  <li class="nav-item mr-2">
+  <a class="navbar-brand FW-bold fst-italic"  href="{% url 'Morrospace' %}">U ARE IN MORROS SPACE ; Start here</a><span class="sr-only"></span></a>
+</li>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ms-auto">
-    </li>
+
+    <!-- Navbar botones  -->
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+    
+
+        <!-- item navbar 1 -->
     <li class="nav-item mr-2">
       <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
     </li>
+
+        <!-- item navbar 2 -->
+
         <a class="nav-link" href="{% url 'blog-posts:posts' %}">Blog</a>
       </li>
+
+          <!-- item navbar 3 -->
+
       <li class="nav-item">
         <li class="nav-item active mr-2">
           <a class="nav-link" href="https://www.github.com/morroshub" target="_blank">Github Profile</a>
-        <li class="nav-item mr-2">
+        
+           <!-- item navbar 4 -->
+
+          <li class="nav-item mr-2">
         <a class="nav-link" href="{% static 'porfolio/LucasMorrone-Dev-python-data.pdf' %}" target="_blank">Certifications PDF</a>
       </li>
     </ul>
