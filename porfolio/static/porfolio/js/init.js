@@ -1,3 +1,6 @@
+
+// Animaciones para el init
+
 document.addEventListener("DOMContentLoaded", function () {
     // Function to write text with a blinking cursor
     function typeWriter(text, i, elementId, fnCallback, delay) {

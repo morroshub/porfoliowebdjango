@@ -1,72 +1,86 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+
   {% load static %}
 
+
+  
   <!-- Hero Section -->
-  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Logos social media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-2c0S0YF6o9N11kuBj4owqJRW8B3pkJLlJ/4Uchpmp4J+Um78lJigQboMm47L5eUsHkCxZMlzJLs+P2s3/Ncz0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-      .discordsocial-icon{
-        color: #aaaa;
-        transition: 0.2s;
-        text-decoration: none;
-        margin: 10 50px;
 
-      }
-      .discordsocial-icon :hover{
-        color: #333
+    <style>
+      background {
+        color: rgb(202, 196, 170);
       }
     </style>
-  </head>
+
+
+
+  <!-- alerta bienvenida -->
+<div class="alert alert-success" role="alert" id="customAlert" style="display: none;">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>"Aww yeah, you successfully read this important alert message. You are here in my bio. On this page of the website, you can find my social media sites and a short resume about me </p>
+  <hr>
+  <p class="mb-0">Thanks for visiting me. Feel free to contact me if you want to. I will be very happy to reply to any questions about my projects</p>
+</div>
+
+
+
+<div class="p-3"><div class="card-card-bod">
+  <div class="col-lg-12">
+          <!-- Contenido izquierdo, como la imagen principal -->
+          <img src="{% static 'CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" alt="portada-morrospace" class="img-fluid w-100 margin: 5px;">
+
+          <a class="btn btn-primary btn-lg rounded-0 w-100" href="{% static 'LucasMorrone-Dev-python-data.pdf' %}" style="font-size: 1em" target="_blank"> Download my CV</a>
+    </div>
 
 
   <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
-            <!-- Contenido izquierdo, como la imagen principal -->
-            <img src="{% static 'CV-LUCASMORRONE-PYTHON-DEV.png' %}" class="img-fluid" style="font-size: 2em; margin: 10px;" />
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <!-- Contenido derecho, que contiene los iconos y el botón -->
+
             <div class="social-btn-container">
                 <!-- Íconos sociales -->
+
                 <div class="social-icons">
-                    <a href="https://www.infobae.com" target="_blank" class="social-icon"><ion-icon name="logo-discord" style="font-size: 5em;"></ion-icon></a>
-                    <a href="https://www.linkedin.com/lucas-genaro-morrone" target="_blank" class="social-icon"><ion-icon name="logo-linkedin" style="font-size: 5em;"></ion-icon></a>
+
                     <a href="https://www.github.com/morroshub" target="_blank" class="social-icon"><ion-icon name="logo-github" style="font-size: 6em;"></ion-icon></a>
+
+                    <a href="https://www.linkedin.com/lucas-genaro-morrone" target="_blank" class="social-icon"><ion-icon name="logo-linkedin" style="font-size: 5em ;"></ion-icon></a>  
+
+                    
+                   <a href="https://www.mandameunmail.com" target="_blank" 
+                    class="social-icon"><ion-icon name="paper-plane-outline"style="font-size: 5em;"></ion-icon></a>
+                    
+                    <a href="https://www.infobae.com" target="_blank" class="social-icon"><ion-icon name="logo-discord" style="font-size: 5em;"></ion-icon></a>
+                
+
                     <a href="https://www.caffesito.com" target="_blank" 
-                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 6em;"></ion-icon></a>
+                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 5em;"></ion-icon></a>
 
                     <a href="https://www.playlist.com" target="_blank" 
-                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 6em;"></ion-icon></a>
-
-                    <a href="https://www.mandameunmail.com" target="_blank" 
-                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 6em;"></ion-icon></a>
-
-                    
-                    
-                    <a href="https://youtube.com/lucasmororne" target="_blank"
-                    class="social-icon"><ion-icon name="logo-youtube" style="font-size: 5em;
-                    "></ion-icon></a>
-                </div>
+                    class="social-icon"><ion-icon name="cafe-outline" style="font-size: 5em;"></ion-icon></a>
                 
-                <!-- Botón de descarga -->
-                <div class="custom-btn-container">
-                    <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'LucasMorrone-Dev-python-data.pdf' %}" target="_blank"> Download my CV</a>
+                    <a href="https://youtube.com/lucasmororne" target="_blank"
+                    class="social-icon"><ion-icon name="logo-youtube" style="font-size: 6em;
+                    "></ion-icon></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
+
   <!-- Porfolio Section -->
-  <div class="row my-4 text-center">
+  <div class="container">
     <h1>I am <strong>Morros</strong></h1>
     <h3>Developer, Data Engineer, SysAdm</h3>
     <p>My interest in the field of Big Data and Business Analytics has consistently driven me to seek learning opportunities and ways to apply it in real-world use cases. My self-directed education is grounded in active exploration of online resources, including courses, conferences, specialized literature, and scholarly essays, which complement my professional experience.</p>
