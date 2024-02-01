@@ -1,3 +1,5 @@
+{% load reactpy %}
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -33,6 +35,12 @@
 
 <body class="text-dark">
   {% include 'partials/navbar.html' %}
+
+  <div class="root">
+   {% component "porfolio.components.hello_world" recipient="World" %}
+  </div>
+
+
 
 <div class="container-fluid">
   {% block content %}

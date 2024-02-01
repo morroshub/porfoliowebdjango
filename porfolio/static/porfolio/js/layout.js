@@ -16,14 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-
-<!-- alertas -->
-<script>
+  
+  // <!-- alertas -->
   document.addEventListener('DOMContentLoaded', function() {
     // Muestra la alerta al cargar la página
     document.getElementById('customAlert').style.display = 'block';
   });
-</script>
+

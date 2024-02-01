@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'reactpy_django',
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,6 +62,30 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'firstdjango.wsgi.application'
+
+ASGI_APPLICATION = "firstdjango.asgi.application"
+
+# ReactPy config 
+
+# https://reactive-python.github.io/reactpy-django/3.5.1/learn/add-reactpy-to-a-django-project/
+
+REACTPY_CACHE = 'default'
+
+# REACTPY_SESSION_MAX_AGE = 10
+
+REACTPY_URL_PREFIX = "reactpy/"
+
+
+# REACTPY_AUTH_BACKEND 	"django.contrib.auth.backends.ModelBackend" 	"example_project.auth.MyModelBackend" 	Dotted path to the Django authentication backend to use for ReactPy components. This is only needed if:
+# 1. You are using AuthMiddlewareStack and...
+# 2. You are using Django's AUTHENTICATION_BACKENDS setting and...
+# 3. Your Django user model does not define a backend attribute.
+
+
+
+# REACTPY_BACKHAUL_THREAD = "True"
+
+
 
 
 # Database

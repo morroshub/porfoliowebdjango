@@ -16,6 +16,10 @@ def Morrospace(request):
     return render(request, 'Morrospace.html')
 
 
+def index(request):
+    return render(request, "layout.html")
+
+
 def your_view(request):
     context = {
         'facebook_url': 'https://www.facebook.com/your-facebook-page',
