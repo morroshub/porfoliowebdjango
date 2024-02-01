@@ -2,14 +2,12 @@
 
 .navbar {
     background-color: #bbbbbb;
-    padding: 5px 100px; /* Ajusta el padding superior e inferior según sea necesario */
+    padding: 500px 100px; /* Ajusta el padding superior e inferior según sea necesario */
     height: 24px; /* Ajusta la altura según sea necesario */
     transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease;
 }
 
 .navbar.hidden {
-    padding: 2;
-    height: 2;
     overflow: visible;
 }
 

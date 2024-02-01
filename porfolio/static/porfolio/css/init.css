@@ -2,14 +2,27 @@
 body {
     background-color: black;
     color: #00ff00;
-    font-family: 'Roboto', monospace;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6; /* Ajusta la altura de línea */
     text-align: match-parent;
     animation: blinkCursor 0.8s infinite;
 }
 
+
+/* texto  */
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive; 
+    color: #00c41a; /* Azul brillante, ajusta según tus preferencias */
+}
+
+p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
 .container {
     max-width: 800px;
-    margin: 80 auto;
+    margin: 120 auto;
     padding: 50px;
 }
 
