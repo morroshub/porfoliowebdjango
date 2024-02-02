@@ -15,22 +15,23 @@ SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org']
+CSRF_TRUSTED_ORIGINS = ['https://duckduckmorros.duckdns.org'] # Permite entrar al adm
 
 # Application definition
 
 INSTALLED_APPS = [
-    'reactpy_django',
     'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'rest_framework',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'reactpy_django',
     'blog',
-    'porfolio',
+    'porfolio.apps.PorfolioConfig'
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,18 @@ WSGI_APPLICATION = 'firstdjango.wsgi.application'
 
 ASGI_APPLICATION = "firstdjango.asgi.application"
 
+
+# # Django rest framework
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.AllowAny',
+#     ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication',
+#     ],
+# }
+
+
 # ReactPy config 
 
 # https://reactive-python.github.io/reactpy-django/3.5.1/learn/add-reactpy-to-a-django-project/
@@ -87,16 +100,35 @@ REACTPY_URL_PREFIX = "reactpy/"
 
 
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Default DB
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# Deploy DB MYSQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'porfolio',
+        'USER': 'morros',
+        'PASSWORD': 'polkKLOP: ',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'unix_socket': '/run/mysqld/mysqld.sock',
+        },
+    },
 }
+
+
+
 
 
 # Password validation
@@ -137,6 +169,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'porfolio/static')]
 
+# MEDIA 
+MEDIA_URL = '/media/'
+MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'porfolio/media')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
