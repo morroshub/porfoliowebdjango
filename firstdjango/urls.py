@@ -13,7 +13,6 @@ urlpatterns = [
     path('Morrospace/', Morrospace, name='Morrospace'),
     path('blog/',include('blog.urls')), 
     path("example/", index, name='Index'),
-    path('',include('porfolio.urls'))
 ]
 
 
