@@ -13,10 +13,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://duckduckmorros.duckdns.org'] # Permite entrar al adm
+ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org','http://sysmorros.online' '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://duckduckmorros.duckdns.org', 'https://morrosgranados.duckdns.org'] # Permite entrar al adm
 
 # Application definition
 
