@@ -1,0 +1,51 @@
+/* navbar */
+
+.navbar {
+    background-color: #bbbbbb;
+    padding: 500px 100px; /* Ajusta el padding superior e inferior según sea necesario */
+    height: 24px; /* Ajusta la altura según sea necesario */
+    transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease;
+}
+
+.navbar.hidden {
+    overflow: visible;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif; /* Reemplaza 'Roboto' con la fuente que prefieras de Google Fonts */
+}
+
+
+/* texto  */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Reemplaza 'Montserrat' con la fuente que prefieras de Google Fonts */
+    color: #1b1b1b; /* Azul brillante, ajusta según tus preferencias */
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ 
+/*social icons */
+.discordsocial-icon {
+    color: #aaaa;
+    transition: 0.2s;
+    text-decoration: none;
+    margin: 10px 50px; /* Corregí el error en la propiedad margin */
+}
+
+.discordsocial-icon:hover {
+    color: #333;
+}
+
+
