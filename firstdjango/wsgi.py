@@ -8,14 +8,14 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 """
 
 import os
-import sys
+import syus
 
+sys.setdefaultencoding('utf-8')
 
-sys.path.append('/home/morros/porfoliowebdjango/firstdjango')
-
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'firstdjango.settings')
-
+sys.path.append('/var/www/porfoliowebdjango/firstdjango')  # Ruta de tu proyecto Django
+sys.path.append('/var/www/porfoliowebdjango/venv/lib/python3.8/site-packages')  # Ruta del venv
 
 from django.core.wsgi import get_wsgi_application
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'firstdjango.settings')
 application = get_wsgi_application()
+

@@ -171,6 +171,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'porfolio/static')]
 
+STATIC_ROOT = '/var/www/porfoliowebdjango/static'
 # MEDIA 
 MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'porfolio/media')]
