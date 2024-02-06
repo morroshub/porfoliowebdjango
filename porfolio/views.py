@@ -1,7 +1,9 @@
 from .models import Project
 from django.shortcuts import render
 # from django.shortcuts import redirect para errores 3xx
-from django.http import HttpResponseNotFound, HttpResponseServerError # Manejo de errores 
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseServerError # Manejo de errores 
+
+
 
 
 # Funcion de inicio de la web ; nos envia a cada apartado a un estilo linktree
@@ -46,9 +48,7 @@ def custom_500(request):
     return render(request, '500.html', status=500)
 
 
-
-
-def your_view(request):
+def social_views(request):
     context = {
         'facebook_url': 'https://www.facebook.com/your-facebook-page',
         'github_url': 'https://github.com/your-github-profile',

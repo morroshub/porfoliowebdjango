@@ -15,23 +15,22 @@ SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org']
+ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://duckduckmorros.duckdns.org'] # Permite entrar al adm
 
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
     'django.contrib.admin',
+    'daphne',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'rest_framework',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'reactpy_django',
+    'porfolio.apps.PorfolioConfig',
+    'rest_framework',
     'blog',
-    'porfolio.apps.PorfolioConfig'
 ]
 
 MIDDLEWARE = [
@@ -86,7 +85,7 @@ REACTPY_CACHE = 'default'
 
 # REACTPY_SESSION_MAX_AGE = 10
 
-REACTPY_URL_PREFIX = "reactpy/"
+REACTPY_URL_PREFIX = "porfolio/reactpy/"
 
 
 # REACTPY_AUTH_BACKEND 	"django.contrib.auth.backends.ModelBackend" 	"example_project.auth.MyModelBackend" 	Dotted path to the Django authentication backend to use for ReactPy components. This is only needed if:
