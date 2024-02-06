@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework.authtoken',
+    'django_nextjs',
     'rest_framework',
     'porfolio.apps.PorfolioConfig',
     'blog',
@@ -67,15 +69,20 @@ WSGI_APPLICATION = 'firstdjango.wsgi.application'
 
 # Django rest framework
 REST_FRAMEWORK = {
+
+    'DEFAULT_PAGINATION_CLASS': 
+        'rest_framework.pagination.PageNumberPagination',
+        'PAGE_SIZE': 10,
+
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    
     ],
 }
-
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
