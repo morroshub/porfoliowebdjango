@@ -36,6 +36,7 @@ LOCAL_APPS = [
 
 THIRD_APPS = [
     'django_nextjs',
+    'daphne',
     'rest_framework.authtoken',
     'rest_framework'
 ]
@@ -92,12 +93,6 @@ REST_FRAMEWORK = {
     
     ],
 }
-
-
-
-
-
-
 
 
 # Password validation

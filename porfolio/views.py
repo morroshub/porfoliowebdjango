@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseServerError # Manejo de errores 
 from django_nextjs.render import render_nextjs_page_sync
 
-
 from django.contrib.auth.models import Group, User
 from rest_framework import permissions, viewsets
 
@@ -30,8 +29,8 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 
-def index(request):
-    return render_nextjs_page_sync(request, '/index')
+# def index(request):
+#     return render_nextjs_page_sync(request, '/index')
 
 # Funcion de inicio de la web ; nos envia a cada apartado a un estilo linktree
 def init_view(request):
