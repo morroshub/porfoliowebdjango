@@ -15,26 +15,26 @@ SECRET_KEY = 'django-insecure-0m#%!j3^k#*recn6tz^7h&cy*uw3yc5-ctv8%ql%98o7v#+sz!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'https:/duckduckmorros.duckdns.org', '127.0.0.1', 'http://localhost:3000']
 CSRF_TRUSTED_ORIGINS = ['https://duckduckmorros.duckdns.org'] # Permite entrar al adm
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'daphne',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'porfolio.apps.PorfolioConfig',
     'rest_framework',
+    'porfolio.apps.PorfolioConfig',
     'blog',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,39 +63,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'firstdjango.wsgi.application'
 
-ASGI_APPLICATION = "firstdjango.asgi.application"
 
 
-# # Django rest framework
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.AllowAny',
-#     ],
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.SessionAuthentication',
-#     ],
-# }
-
-
-# ReactPy config 
-
-# https://reactive-python.github.io/reactpy-django/3.5.1/learn/add-reactpy-to-a-django-project/
-
-REACTPY_CACHE = 'default'
-
-# REACTPY_SESSION_MAX_AGE = 10
-
-REACTPY_URL_PREFIX = "porfolio/reactpy/"
-
-
-# REACTPY_AUTH_BACKEND 	"django.contrib.auth.backends.ModelBackend" 	"example_project.auth.MyModelBackend" 	Dotted path to the Django authentication backend to use for ReactPy components. This is only needed if:
-# 1. You are using AuthMiddlewareStack and...
-# 2. You are using Django's AUTHENTICATION_BACKENDS setting and...
-# 3. Your Django user model does not define a backend attribute.
-
-
-
-# REACTPY_BACKHAUL_THREAD = "True"
+# Django rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+}
 
 
 
