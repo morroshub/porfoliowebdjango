@@ -31,10 +31,12 @@ BASE_APPS = [
 
 LOCAL_APPS = [    
     'porfolio.apps.PorfolioConfig',
-    'blog'
+    'blog.apps.BlogConfig'
 ]
 
 THIRD_APPS = [
+    'coreapi',
+    'corsheaders',
     'django_nextjs',
     'daphne',
     'rest_framework.authtoken',
@@ -46,16 +48,22 @@ INSTALLED_APPS = BASE_APPS +LOCAL_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'firstdjango.urls'
+
+# Auth Cors 
+CORS_ALLOWED_ORIGINS = [
+    "https://localhost:3000"
+]
+
 
 TEMPLATES = [
     {
@@ -80,6 +88,8 @@ WSGI_APPLICATION = 'firstdjango.wsgi.application'
 # Django rest framework
 REST_FRAMEWORK = {
 
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    
     'DEFAULT_PAGINATION_CLASS': 
         'rest_framework.pagination.PageNumberPagination',
         'PAGE_SIZE': 10,

@@ -24,19 +24,18 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
 
-urlpatterns = [
 
-    path("", init_view, name="init_view"),
-    path('', include(router.urls)),
+urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', init_view, name='Init'),
-    path('Projects/', Projects, name='Projects'),
-    path('Morrospace/', Morrospace, name='Morrospace'),
-    path('blog/',include('blog.urls')), 
-    path('api-auth/', include('rest_framework.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include(router.urls)),
+    path('blog/', include('blog.urls')),
+    path('porfolio/', include('porfolio.urls')),
     path("", include("django_nextjs.urls")),
-    path('',include('porfolio.urls'))
+    # path("", init_view, name="init_view"),
+    # path('', include(router.urls)),
+    # path('', init_view, name='Init'),
+    # path('Morrospace/', Morrospace, name='Morrospace'),
+    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
 

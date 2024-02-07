@@ -13,6 +13,7 @@ router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
 
+    path('Morrospace/', views.Morrospace, name='morrospace'),
     path("", init_view, name="init_view"),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),

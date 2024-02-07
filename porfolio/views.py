@@ -46,6 +46,7 @@ def Morrospace(request):
     return render(request, 'Morrospace.html')
 
 
+
 def index(request):
     return render(request, "layout.html")
 
